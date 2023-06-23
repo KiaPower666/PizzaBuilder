@@ -1,4 +1,4 @@
-import {sectionHandler} from './sectionHandler'
+import { sectionHandler } from "./sectionHandler";
 
 export const inputsChecked = [];
 
