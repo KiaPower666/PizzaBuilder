@@ -7,6 +7,6 @@ import { addBackground } from '../utils/addBackground';
 
 addClassFoundById("header", styles.header);
 addClassFoundById("header", styles.container);
-addBackground("header", banner)
+addBackground("header", banner);
 
 
