@@ -2,6 +2,7 @@ import {sectionHandler} from './sectionHandler'
 
 export const inputsChecked = [];
 
-export function chooseTwoIngredients(e) {
-  sectionHandler(e, inputsChecked, 2);
+export function sauceHandler(e) {
+  sectionHandler(e, inputsChecked, 1);
 }
+

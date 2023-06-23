@@ -1,8 +1,10 @@
 import styles from "./ingredients.module.scss";
 import { addClassFoundById } from "../utils/addClassFoundById";
 import { addClassFoundByClass } from "../utils/addClassFoundByClass";
-import { chooseOneIngredient } from "./chooseOneIngredient";
-import { chooseTwoIngredients } from "./chooseTwoIngredients";
+import { doughHandler } from "./doughHandler";
+import { sauceHandler } from "./sauceHandler";
+import { meatHandler } from "./meatHandler";
+import { vegetablesHandler } from "./vegetablesHandler";
 
 
 addClassFoundById("ingredients", styles.ingredients);
@@ -18,10 +20,10 @@ const meatDiv = document.getElementById("meat");
 const vegetablesDiv = document.getElementById("vegetables");
 
 
-doughDiv.addEventListener("click", chooseOneIngredient);
-sauceDiv.addEventListener("click", chooseOneIngredient);
-meatDiv.addEventListener("click", chooseTwoIngredients);
-vegetablesDiv.addEventListener("click", chooseTwoIngredients);
+doughDiv.addEventListener("click", doughHandler);
+sauceDiv.addEventListener("click", sauceHandler);
+meatDiv.addEventListener("click", meatHandler);
+vegetablesDiv.addEventListener("click", vegetablesHandler);
 
 
 
