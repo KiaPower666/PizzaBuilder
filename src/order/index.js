@@ -1,9 +1,11 @@
-import styles from './order.module.scss';
-import {addClassFoundById} from '../helpers/addClassFoundById';
-import imgPizza from '../../assets/pizza.png';
+import styles from "./order.module.scss";
+import { addClassFoundById } from "../utils/addClassFoundById";
+import imgPizza from "../../assets/pizza.png";
 
-const pizzaImg = document.getElementById('pizzaImg');
+const pizzaImg = document.getElementById("pizzaImg");
 pizzaImg.src = imgPizza;
+
+
 
 addClassFoundById("order", styles.order);
 addClassFoundById("ordersquare", styles.ordersquare);
