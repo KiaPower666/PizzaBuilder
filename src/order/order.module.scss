@@ -1,0 +1,75 @@
+@import "../variables.scss";
+
+
+.order {
+  background-color: $pink;
+  width: 50%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .ordersquare {
+    height: 250px;
+    width: 250px;
+    position: relative;
+
+    img {
+      display: block;
+    }
+
+    .square {
+      height: 125px;
+      width: 125px;
+      background-color: $pink;
+      position: absolute;
+    }
+    .square1 {
+      @extend .square;
+      top: 0;
+      left: 0;
+      opacity: 0.8;
+    }
+
+    .square2 {
+      @extend .square;
+      top: 0;
+      right: 0;
+      opacity: 0.8;
+    }
+
+    .square3 {
+      @extend .square;
+      bottom: 0;
+      right: 0;
+      opacity: 0.8;
+    }
+
+    .square4 {
+      @extend .square;
+      bottom: 0;
+      left: 0;
+      opacity: 0.8;
+    }
+  }
+
+  .btn {
+    width: 50%;
+    height: 50px;
+    margin: 10px 0;
+    border: 1px solid $red;
+    border-radius: 15px;
+    background-color: $red;
+    color: $white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 18px;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $black;
+    }
+  }
+}

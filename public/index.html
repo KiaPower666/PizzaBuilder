@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza-PJ</title>
+    <style>
+      .price {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+        Собери для себя <br />
+        идеальную пиццу
+      </h1>
+    </div>
+    <div id="wrapper-main">
+      <div id="viewingarea">
+        <h2>Ваш заказ:</h2>
+        <ul id="order-list">
+          <span id="orderspan">Выберите ингредиенты</span>
+        </ul>
+        <div class="price">Цена: <span id="price">23 p.</span></div>
+      </div>
+      <div id="order" class="order">
+        <div id="ordersquare" class="order-square">
+          <img id="pizzaImg" alt="pizza" width="250px" height="250px" />
+          <div id="square1" class="square1"></div>
+          <div id="square2" class="square2"></div>
+          <div id="square3" class="square3"></div>
+          <div id="square4" class="square4"></div>
+        </div>
+        <button id="btn" class="btn">ЗАКАЗАТЬ</button>
+      </div>
+    </div>
+
+    <div class="ingredients container" id="ingredients">
+      <div id="dough">
+        <h3>Основа</h3>
+        <div class="input-div">
+          <input type="checkbox" id="dough_11" class="input1" />
+          <label for="dough_11" class="checkbox-label">Классика</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="dough_12" class="input1" />
+          <label for="dough_12" class="checkbox-label">Тонкое</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="dough_13" class="input1" />
+          <label for="dough_13" class="checkbox-label">Сырный борт</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="dough_14" class="input1" />
+          <label for="dough_14" class="checkbox-label">Хот-Дог борт</label>
+        </div>
+      </div>
+      <div id="meat">
+        <h3>Мясо</h3>
+        <div class="input-div">
+          <input type="checkbox" id="meat_21" class="input1" />
+          <label for="meat_21" class="checkbox-label">Бекон</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="meat_22" class="input1" />
+          <label for="meat_22" class="checkbox-label">Ветчина</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="meat_23" class="input1" />
+          <label for="meat_23" class="checkbox-label">Пепперони</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="meat_24" class="input1" />
+          <label for="meat_24" class="checkbox-label">Баварские колбаски</label>
+        </div>
+      </div>
+      <div id="vegetables">
+        <h3>Овощи</h3>
+        <div class="input-div">
+          <input type="checkbox" id="vegetables_31" class="input1" />
+          <label for="vegetables_31" class="checkbox-label"
+            >Сладкий перец</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="vegetables_32" class="input1" />
+          <label for="vegetables_32" class="checkbox-label">Шампиньоны</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="vegetables_33" class="input1" />
+          <label for="vegetables_33" class="checkbox-label">Халапеньо</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="vegetables_34" class="input1" />
+          <label for="vegetables_34" class="checkbox-label">Томаты</label>
+        </div>
+      </div>
+      <div id="sauce">
+        <h3>Соусы</h3>
+        <div class="input-div">
+          <input type="checkbox" id="sauce_41" class="input1" />
+          <label for="sauce_41" class="checkbox-label">Барбекю</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="sauce_42" class="input1" />
+          <label for="sauce_42" class="checkbox-label">Бургер</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="sauce_43" class="input1" />
+          <label for="sauce_43" class="checkbox-label">Ранч</label>
+        </div>
+        <div class="input-div">
+          <input type="checkbox" id="sauce_44" class="input1" />
+          <label for="sauce_44" class="checkbox-label">Карри</label>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

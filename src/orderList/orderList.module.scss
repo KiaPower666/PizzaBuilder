@@ -1,0 +1,43 @@
+@import "../variables.scss";
+
+.wrapper {
+    display: flex;
+    gap: 15px;
+    min-height: 280px;
+  
+    .viewingarea {
+      background-color: $yellow;
+      width: 50%;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+  
+      h2 {
+        text-align: center;
+      }
+  
+      ul {
+        list-style: decimal;
+        cursor: pointer;
+      
+        span {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+  
+      .price {
+        align-self: flex-end;
+        padding-right: 50px;
+        font-size: 21px;
+      }
+    }
+}
+
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
