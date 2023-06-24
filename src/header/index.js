@@ -1,7 +1,7 @@
 import styles from './header.module.scss';
 import banner from '../../assets/banner.png' 
-import {addClassFoundById} from '../helpers/addClassFoundById';
-import { addBackground } from '../helpers/addbackground';
+import {addClassFoundById} from '../utils/addClassFoundById';
+import { addBackground } from '../utils/addBackground';
 
 
 
