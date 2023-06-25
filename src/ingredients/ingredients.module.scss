@@ -21,6 +21,7 @@
 
     .checkboxlabel {
       padding-left: 25px;
+      cursor: pointer;
 
       &::before {
         content: "";
