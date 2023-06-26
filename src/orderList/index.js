@@ -1,6 +1,6 @@
 import styles from "./orderList.module.scss";
 import { addClassFoundById } from "../utils/addClassFoundById";
-import { ingredients } from "../orderList/ingredients";
+import { ingredients } from "./ingredients";
 import { inputsChecked as inputsCheckedDough } from "../ingredients/doughHandler";
 import { inputsChecked as inputsCheckedMeat } from "../ingredients/meatHandler";
 import { inputsChecked as inputsCheckedVegetables } from "../ingredients/vegetablesHandler";
@@ -8,18 +8,16 @@ import { inputsChecked as inputsCheckedSauce } from "../ingredients/sauceHandler
 import { showPizzaSlice } from "../order/showPizzaslice";
 import { setButtonEnabled } from "../order/setButtonEnabled";
 
-
-
 addClassFoundById("wrapper-main", styles.wrapper);
 addClassFoundById("wrapper-main", styles.container);
 addClassFoundById("viewingarea", styles.viewingarea);
 addClassFoundById("price-block", styles.price);
 
 const orderList = document.getElementById("order-list");
-const inputsDiv = document.getElementById("ingredients");
+const ingredientsContainer = document.getElementById("ingredients");
 const inputs = document.querySelectorAll(".input1");
 
-inputsDiv.addEventListener("click", () => {
+ingredientsContainer.addEventListener("click", () => {
   const inputsChecked = Array.from(inputs).filter((input) => input.checked);
   updateOrderList(inputsChecked);
   price();
@@ -47,6 +45,7 @@ function removeFromOrderList(event) {
   const sectionId = inputId.slice(0, -3); //dough
   input.checked = false;
   event.target.remove();
+  price();
 
   switch (sectionId) {
     case "dough":
@@ -84,7 +83,6 @@ function removeFromOrderList(event) {
       break;
   }
 }
-//-------------------------------------------------------------------
 function price() {
   const totalPriceElement = document.getElementById("price");
   let totalPrice = 0;
