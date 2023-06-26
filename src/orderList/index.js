@@ -76,7 +76,7 @@ function removeFromOrderList(event) {
       const foundInputIndex4 = inputsCheckedSauce.findIndex(
         (elem) => elem === input
       );
-      inputsCheckedDough.splice(foundInputIndex4, 1);
+      inputsCheckedSauce.splice(foundInputIndex4, 1);
       showPizzaSlice("sauce", "square4");
       setButtonEnabled();
       break;
