@@ -1,7 +1,6 @@
 import styles from "./order.module.scss";
 
-export function setButtonEnabled(e) {
-  if (!e.target.classList.contains("checkbox-label")) return;
+export function setButtonEnabled() {
   const squareBlocks = Array.from(
     document.getElementsByClassName("squareBlock")
   );

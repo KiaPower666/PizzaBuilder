@@ -5,6 +5,10 @@ import { inputsChecked as inputsCheckedDough } from "../ingredients/doughHandler
 import { inputsChecked as inputsCheckedMeat } from "../ingredients/meatHandler";
 import { inputsChecked as inputsCheckedVegetables } from "../ingredients/vegetablesHandler";
 import { inputsChecked as inputsCheckedSauce } from "../ingredients/sauceHandler";
+import { showPizzaSlice } from "../order/showPizzaslice";
+import { setButtonEnabled } from "../order/setButtonEnabled";
+
+
 
 addClassFoundById("wrapper-main", styles.wrapper);
 addClassFoundById("wrapper-main", styles.container);
@@ -50,23 +54,32 @@ function removeFromOrderList(event) {
         (elem) => elem === input
       );
       inputsCheckedDough.splice(foundInputIndex1, 1);
+      showPizzaSlice("dough", "square1");
+
       break;
     case "meat":
       const foundInputIndex2 = inputsCheckedMeat.findIndex(
         (elem) => elem === input
       );
       inputsCheckedMeat.splice(foundInputIndex2, 1);
+      showPizzaSlice("meat", "square2");
+      setButtonEnabled();
       break;
     case "vegetables":
       const foundInputIndex3 = inputsCheckedVegetables.findIndex(
         (elem) => elem === input
       );
       inputsCheckedVegetables.splice(foundInputIndex3, 1);
+      showPizzaSlice("vegetables", "square3");
+      setButtonEnabled();
       break;
     case "sauce":
       const foundInputIndex4 = inputsCheckedSauce.findIndex(
         (elem) => elem === input
       );
+      inputsCheckedSauce.splice(foundInputIndex4, 1);
+      showPizzaSlice("sauce", "square4");
+      setButtonEnabled();
       inputsCheckedDough.splice(foundInputIndex4, 1);
       break;
   }
