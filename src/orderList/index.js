@@ -1,6 +1,10 @@
 import styles from "./orderList.module.scss";
 import { addClassFoundById } from "../utils/addClassFoundById";
 import { ingredients } from "../orderList/ingredients";
+import { inputsChecked as inputsCheckedDough } from "../ingredients/doughHandler";
+import { inputsChecked as inputsCheckedMeat } from "../ingredients/meatHandler";
+import { inputsChecked as inputsCheckedVegetables } from "../ingredients/vegetablesHandler";
+import { inputsChecked as inputsCheckedSauce } from "../ingredients/sauceHandler";
 
 addClassFoundById("wrapper-main", styles.wrapper);
 addClassFoundById("wrapper-main", styles.container);
@@ -21,39 +25,67 @@ function updateOrderList(inputsChecked) {
   orderList.innerHTML = "";
   inputsChecked.forEach((input) => {
     const labelText = input.nextElementSibling.textContent;
+    const inputId = input.id;
+    const liId = inputId + "_order";
     const ingredientItem = document.createElement("li");
+    ingredientItem.id = liId;
     ingredientItem.textContent = labelText;
     orderList.appendChild(ingredientItem);
   });
 }
 
-orderList.addEventListener("click", (event) => {
-  if (event.target.tagName === "LI") {
-    const ingredientText = event.target.textContent;
-    const currentInput = Array.from(inputs).find((input) => {
-      const labelText = input.nextElementSibling.textContent;
-      return labelText === ingredientText;
-    });
-    if (currentInput) {
-      currentInput.checked = false;
-    }
-    event.target.remove();
+orderList.addEventListener("click", removeFromOrderList);
+
+function removeFromOrderList(event) {
+  if (!event.target.tagName === "LI") return;
+  const inputId = event.target.id.slice(0, -6); //dough_11
+  const input = document.getElementById(inputId); //input c id ='dough_11'
+  const sectionId = inputId.slice(0, -3); //dough
+  input.checked = false;
+  event.target.remove();
+
+  switch (sectionId) {
+    case "dough":
+      const foundInputIndex1 = inputsCheckedDough.findIndex(
+        (elem) => elem === input
+      );
+      inputsCheckedDough.splice(foundInputIndex1, 1);
+      break;
+    case "meat":
+      const foundInputIndex2 = inputsCheckedMeat.findIndex(
+        (elem) => elem === input
+      );
+      inputsCheckedMeat.splice(foundInputIndex2, 1);
+      break;
+    case "vegetables":
+      const foundInputIndex3 = inputsCheckedVegetables.findIndex(
+        (elem) => elem === input
+      );
+      inputsCheckedVegetables.splice(foundInputIndex3, 1);
+      break;
+    case "sauce":
+      const foundInputIndex4 = inputsCheckedSauce.findIndex(
+        (elem) => elem === input
+      );
+      inputsCheckedDough.splice(foundInputIndex4, 1);
+      break;
   }
-});
-function price() { 
+}
+//-------------------------------------------------------------------
+function price() {
   const totalPriceElement = document.getElementById("price");
-    let totalPrice = 0;
-  
-    inputs.forEach((input) => {
-      if (input.checked) {
-        const labelText = input.nextElementSibling.textContent;
-        Object.values(ingredients).forEach((category) => {
-          const ingredient = category.find((item) => item.name === labelText);
-          if (ingredient) {
-            totalPrice += ingredient.price;
-          }
-        });
-      }
-    });
-    totalPriceElement.textContent = totalPrice + " р.";
-  }
+  let totalPrice = 0;
+
+  inputs.forEach((input) => {
+    if (input.checked) {
+      const labelText = input.nextElementSibling.textContent;
+      Object.values(ingredients).forEach((category) => {
+        const ingredient = category.find((item) => item.name === labelText);
+        if (ingredient) {
+          totalPrice += ingredient.price;
+        }
+      });
+    }
+  });
+  totalPriceElement.textContent = totalPrice + " р.";
+}
