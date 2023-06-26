@@ -9,6 +9,7 @@ import { showPizzaSlice } from "../order/showPizzaslice";
 import { setButtonEnabled } from "../order/setButtonEnabled";
 
 
+
 addClassFoundById("wrapper-main", styles.wrapper);
 addClassFoundById("wrapper-main", styles.container);
 addClassFoundById("viewingarea", styles.viewingarea);
@@ -54,7 +55,7 @@ function removeFromOrderList(event) {
       );
       inputsCheckedDough.splice(foundInputIndex1, 1);
       showPizzaSlice("dough", "square1");
-      setButtonEnabled();
+
       break;
     case "meat":
       const foundInputIndex2 = inputsCheckedMeat.findIndex(
@@ -79,6 +80,7 @@ function removeFromOrderList(event) {
       inputsCheckedSauce.splice(foundInputIndex4, 1);
       showPizzaSlice("sauce", "square4");
       setButtonEnabled();
+      inputsCheckedDough.splice(foundInputIndex4, 1);
       break;
   }
 }
