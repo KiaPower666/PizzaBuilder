@@ -8,6 +8,5 @@ export const inputsChecked = [];
 export function doughHandler(e) {
   sectionHandler(e, inputsChecked, 1);
   showPizzaSlice ("dough", "square1"); 
-  addToPizzaObj(e, "dough", 1)
-  console.log(pizzaObj)
+  addToPizzaObj(e, "dough", 1);
 }

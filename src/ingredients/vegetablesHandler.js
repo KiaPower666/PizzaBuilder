@@ -9,7 +9,6 @@ export const inputsChecked = [];
 export function vegetablesHandler(e) {
   sectionHandler(e, inputsChecked, 2);
   showPizzaSlice ("vegetables", "square3"); 
-  addToPizzaObj(e, "vegetables", 2)
-  console.log(pizzaObj)
+  addToPizzaObj(e, "vegetables", 2);
 }
 

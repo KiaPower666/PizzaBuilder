@@ -1,3 +1,5 @@
+import { pizzaObj } from "../pizzaObject";
+
 export function createPopup() {
     const popup = document.createElement("div");
     const message = document.createElement("p");
@@ -38,5 +40,5 @@ export function createPopup() {
   
   orderButton.addEventListener("click", function() {
     createPopup();
-    orderButton.disabled = true;
+    console.log(pizzaObj)
   });
