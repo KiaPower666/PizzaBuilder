@@ -7,6 +7,7 @@ import { inputsChecked as inputsCheckedVegetables } from "../ingredients/vegetab
 import { inputsChecked as inputsCheckedSauce } from "../ingredients/sauceHandler";
 import { showPizzaSlice } from "../order/showPizzaslice";
 import { setButtonEnabled } from "../order/setButtonEnabled";
+import { pizzaObj } from "../pizzaObject";
 
 addClassFoundById("wrapper-main", styles.wrapper);
 addClassFoundById("wrapper-main", styles.container);
@@ -54,7 +55,8 @@ function removeFromOrderList(event) {
       );
       inputsCheckedDough.splice(foundInputIndex1, 1);
       showPizzaSlice("dough", "square1");
-
+      setButtonEnabled();
+      removeFromPizzaObject(event, sectionId);
       break;
     case "meat":
       const foundInputIndex2 = inputsCheckedMeat.findIndex(
@@ -63,6 +65,7 @@ function removeFromOrderList(event) {
       inputsCheckedMeat.splice(foundInputIndex2, 1);
       showPizzaSlice("meat", "square2");
       setButtonEnabled();
+      removeFromPizzaObject(event, sectionId);
       break;
     case "vegetables":
       const foundInputIndex3 = inputsCheckedVegetables.findIndex(
@@ -71,6 +74,7 @@ function removeFromOrderList(event) {
       inputsCheckedVegetables.splice(foundInputIndex3, 1);
       showPizzaSlice("vegetables", "square3");
       setButtonEnabled();
+      removeFromPizzaObject(event, sectionId);
       break;
     case "sauce":
       const foundInputIndex4 = inputsCheckedSauce.findIndex(
@@ -79,10 +83,17 @@ function removeFromOrderList(event) {
       inputsCheckedSauce.splice(foundInputIndex4, 1);
       showPizzaSlice("sauce", "square4");
       setButtonEnabled();
-      inputsCheckedDough.splice(foundInputIndex4, 1);
+      removeFromPizzaObject(event, sectionId);
       break;
   }
 }
+function removeFromPizzaObject(event, sectionId) {
+  const index = pizzaObj[sectionId].findIndex(
+    (el) => el === event.target.textContent
+  );
+  pizzaObj[sectionId].splice(index, 1);
+}
+
 function price() {
   const totalPriceElement = document.getElementById("price");
   let totalPrice = 0;
