@@ -16,7 +16,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: 'body',
-            template: 'public/index.html'
+            template: 'public/index.html',
+            favicon: "./assets/Pizza-icon.ico"
         })
     ],
     module: {
@@ -30,7 +31,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|svg|jpg|gif)$/i,
+                test: /\.(png|svg|jpg|gif|ico)$/i,
                 use: ['file-loader']
             }
         ]
