@@ -40,7 +40,7 @@ function updateOrderList(inputsChecked) {
 orderList.addEventListener("click", removeFromOrderList);
 
 function removeFromOrderList(event) {
-  if (event.target.tagName !== "li") return;
+  if (event.target.tagName !== "LI") return;
   const inputId = event.target.id.slice(0, -6); 
   const input = document.getElementById(inputId); 
   const sectionId = inputId.slice(0, -3); 
