@@ -18,13 +18,14 @@ const orderList = document.getElementById("order-list");
 const ingredientsContainer = document.getElementById("ingredients");
 const inputs = document.querySelectorAll(".input1");
 
-ingredientsContainer.addEventListener("click", () => {
+ingredientsContainer.addEventListener("click", (e) => {
   const inputsChecked = Array.from(inputs).filter((input) => input.checked);
-  updateOrderList(inputsChecked);
+  updateOrderList(e, inputsChecked);
   price();
 });
 
-function updateOrderList(inputsChecked) {
+function updateOrderList(e, inputsChecked) {
+  if (e.target.tagName !== "LABEL") return;
   orderList.innerHTML = "";
   inputsChecked.forEach((input) => {
     const labelText = input.nextElementSibling.textContent;

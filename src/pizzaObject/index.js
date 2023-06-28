@@ -6,6 +6,7 @@ export const pizzaObj = {
 };
 
 export function addToPizzaObj(e, sectionName, num) {
+  if (e.target.tagName !== "LABEL") return;
   if (e.target.previousElementSibling.checked) {
     pizzaObj[sectionName].push(e.target.textContent);
     if (pizzaObj[sectionName].length > num) {
